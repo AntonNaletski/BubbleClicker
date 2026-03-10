@@ -1,14 +1,14 @@
-import './App.css'
+import Lemon from "./components/Lemon";
+import "./App.css";
 
 function App() {
-
   return (
     <>
       <div>
-        TODO Lemon Clicker
-      </div>  
+        <Lemon />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
