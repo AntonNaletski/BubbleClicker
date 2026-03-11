@@ -1,3 +1,5 @@
+import Menu from "./components/Menu";
+
 import { useState } from "react";
 import Header from "./components/Header";
 import Balance from "./components/Balance";
@@ -11,16 +13,17 @@ function App() {
     setClicks(clicks + 1);
   };
   return (
-    <>
-      <div>
-        <Header>Lemon clicker</Header>
-
-        <Balance total={clicks} />
-        <Lemon onClick={handleClick} />
-
-        <Booster value="3.2" />
+    <div className="root">
+      <div className="root_content">
+        <div className="container clicker">
+          <Header>lemon clicker</Header>
+          <Balance total={clicks} />
+          <Lemon onClick={handleClick} />
+          <Booster value="3.2" />
+        </div>
       </div>
-    </>
+      <Menu items={2} />
+    </div>
   );
 }
 
