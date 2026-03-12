@@ -1,3 +1,4 @@
+import Credits from "../pages/Credits";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Root from "../components/Root";
@@ -20,6 +21,7 @@ function AppRouter(props) {
         },
         { path: "store", element: <Store stats={props.stats} /> },
         { path: "settings", element: <Settings stats={props.stats} /> },
+        { path: "credits", element: <Credits /> },
       ],
     },
   ]);
