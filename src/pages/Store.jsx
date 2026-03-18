@@ -4,8 +4,10 @@ import Header from "../components/Header";
 
 function Store(props) {
   // Muodostetaan renderöitävä tuotelista.
+
+  // Muodostetaan renderöitävä tuotelista.
   const items = props.storeitems.map((item) => (
-    <Item key={item.id} item={item} />
+    <Item key={item.id} item={item} handlePurchase={props.handlePurchase} />
   ));
 
   return (
