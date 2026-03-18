@@ -19,7 +19,11 @@ function AppRouter(props) {
             <Clicker stats={props.stats} handleClick={props.handleClick} />
           ),
         },
-        { path: "store", element: <Store stats={props.stats} /> },
+        {
+          path: "store",
+          element: <Store stats={props.stats} storeitems={props.storeitems} />,
+        },
+
         { path: "settings", element: <Settings stats={props.stats} /> },
         { path: "credits", element: <Credits /> },
       ],
