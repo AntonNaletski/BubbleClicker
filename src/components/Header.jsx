@@ -1,3 +1,4 @@
+import shortenNumber from "../utils/shortenNumber";
 import iconLemon from "../assets/lemon.svg";
 
 function Header(props) {
@@ -6,7 +7,7 @@ function Header(props) {
       <div className="header header_sub">
         <h1>{props.children}</h1>
         <div>
-          {props.balance} <img src={iconLemon} />
+          {shortenNumber(props.balance)} <img src={iconLemon} />
         </div>
       </div>
     );
