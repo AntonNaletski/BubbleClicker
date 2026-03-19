@@ -1,3 +1,4 @@
+import useLocalStorage from "./utils/useLocalStorage";
 import getPurchasableItems from "./utils/getPurchasableItems";
 import round from "./utils/round";
 import items from "./config/items.js";
@@ -6,9 +7,9 @@ import { useState } from "react";
 import "./App.css";
 function App() {
   const handleReset = () => {
-    // Päivitetään tilamuuttujat alkuarvoihin.
-    setStats(initialstats);
-    setStoreitems(items);
+    // Palautetaan taltiot alkuarvoihin.
+    resetStats();
+    resetStoreitems();
   };
 
   // Laskee niiden tuotteiden lukumäärän, joiden ostamiseen on varaa.
@@ -21,7 +22,11 @@ function App() {
   };
 
   // Luodaan tilamuuttuja, johon tallennetaan tuotelista.
-  const [storeitems, setStoreitems] = useState(items);
+  // Luodaan taltio, johon tallennetaan tuotelista.
+  const [storeitems, setStoreitems, resetStoreitems] = useLocalStorage(
+    "lemon-items",
+    items,
+  );
 
   // Luodaan tilamuuttuja, johon tallennetaan pelin laskennalliset tiedot.
   // Esitellään pelin laskennalliset alkuarvot.
@@ -35,7 +40,11 @@ function App() {
   };
 
   // Luodaan tilamuuttuja, johon tallennetaan pelin laskennalliset tiedot.
-  const [stats, setStats] = useState(initialstats);
+  // Luodaan taltio, johon tallennetaan pelin laskennalliset tiedot.
+  const [stats, setStats, resetStats] = useLocalStorage(
+    "lemon-stats",
+    initialstats,
+  );
 
   const handleClick = () => {
     // Tehdään kopio stats-tilamuuttujasta.
