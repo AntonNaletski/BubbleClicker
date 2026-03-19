@@ -1,9 +1,19 @@
+import getPurchasableItems from "./utils/getPurchasableItems";
 import round from "./utils/round";
 import items from "./config/items.js";
 import AppRouter from "./components/AppRouter";
 import { useState } from "react";
 import "./App.css";
 function App() {
+  // Laskee niiden tuotteiden lukumäärän, joiden ostamiseen on varaa.
+  const countBuyableItems = (items, balance) => {
+    let total = 0;
+    getPurchasableItems(items).forEach((item) => {
+      if (item.price <= balance) total++;
+    });
+    return total;
+  };
+
   // Luodaan tilamuuttuja, johon tallennetaan tuotelista.
   const [storeitems, setStoreitems] = useState(items);
 
@@ -23,6 +33,8 @@ function App() {
     // Tallennetaan päivitetty stats-muuttuja.
     // Kasvatetaan sitruunoiden määrää kasvatusarvolla.
     newstats.balance = round(newstats.balance + newstats.increase, 1);
+    // Lasketaan ostettavissa olevien tuotteiden lukumäärä.
+    newstats.itemstobuy = countBuyableItems(storeitems, newstats.balance);
 
     setStats(newstats);
   };
@@ -62,6 +74,8 @@ function App() {
       newstats.increase = round(increase, 1);
 
       newstats.upgrades = upgrades;
+      // Lasketaan ostettavissa olevien tuotteiden lukumäärä.
+      newstats.itemstobuy = countBuyableItems(newstoreitems, newstats.balance);
 
       // Tallennetaan uudet tilamuuttujien arviot.
       setStoreitems(newstoreitems);
