@@ -1,13 +1,13 @@
+import getPurchasableItems from "../utils/getPurchasableItems";
 import Item from "../components/Item";
-
 import Header from "../components/Header";
-
 function Store(props) {
   // Muodostetaan renderöitävä tuotelista.
 
   // Muodostetaan renderöitävä tuotelista.
   // Muodostetaan renderöitävä tuotelista.
-  const items = props.storeitems.map((item) => (
+  // Muodostetaan renderöitävä tuotelista.
+  const items = getPurchasableItems(props.storeitems).map((item) => (
     <Item
       key={item.id}
       item={item}
