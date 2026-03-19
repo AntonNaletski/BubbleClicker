@@ -13,7 +13,7 @@ function Item(props) {
 
   return (
     <div
-      className="item"
+      className={props.disabled ? "item item-disabled" : "item"}
       onClick={() => {
         props.handlePurchase(props.item.id);
       }}

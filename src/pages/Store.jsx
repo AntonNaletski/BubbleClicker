@@ -6,8 +6,14 @@ function Store(props) {
   // Muodostetaan renderöitävä tuotelista.
 
   // Muodostetaan renderöitävä tuotelista.
+  // Muodostetaan renderöitävä tuotelista.
   const items = props.storeitems.map((item) => (
-    <Item key={item.id} item={item} handlePurchase={props.handlePurchase} />
+    <Item
+      key={item.id}
+      item={item}
+      handlePurchase={props.handlePurchase}
+      disabled={props.stats.balance < item.price}
+    />
   ));
 
   return (
