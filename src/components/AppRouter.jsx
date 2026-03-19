@@ -30,7 +30,13 @@ function AppRouter(props) {
           ),
         },
 
-        { path: "settings", element: <Settings stats={props.stats} /> },
+        {
+          path: "settings",
+          element: (
+            <Settings stats={props.stats} handleReset={props.handleReset} />
+          ),
+        },
+
         { path: "credits", element: <Credits /> },
       ],
     },

@@ -5,6 +5,12 @@ import AppRouter from "./components/AppRouter";
 import { useState } from "react";
 import "./App.css";
 function App() {
+  const handleReset = () => {
+    // Päivitetään tilamuuttujat alkuarvoihin.
+    setStats(initialstats);
+    setStoreitems(items);
+  };
+
   // Laskee niiden tuotteiden lukumäärän, joiden ostamiseen on varaa.
   const countBuyableItems = (items, balance) => {
     let total = 0;
@@ -52,7 +58,9 @@ function App() {
     // Varmistetaan, että käyttäjällä on varaa ostaa tuote.
     if (stats.balance >= storeitems[index].price) {
       // Tehdään kopiot tilamuuttujista.
-      let newstoreitems = [...storeitems];
+      // Tehdään kopiot tilamuuttujista.
+      let newstoreitems = JSON.parse(JSON.stringify(storeitems));
+
       let newstats = { ...stats };
       // Kasvatetaan tuotteiden määrää yhdellä.
       newstoreitems[index].qty++;
@@ -97,6 +105,7 @@ function App() {
       storeitems={storeitems}
       handleClick={handleClick}
       handlePurchase={handlePurchase}
+      handleReset={handleReset}
     />
   );
 }
