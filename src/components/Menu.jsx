@@ -8,12 +8,12 @@ function Menu(props) {
   return (
     <div className="menu">
       <div>
-        <NavLink to="/">
+        <NavLink to="/" viewTransition>
           <img src={iconLemon} alt="main" />
         </NavLink>
       </div>
       <div>
-        <NavLink to="/store">
+        <NavLink to="/store" viewTransition>
           <img src={iconPackage} alt="store" />
           {props.items ? (
             <span className="menu_badge">{props.items}</span>
@@ -21,7 +21,7 @@ function Menu(props) {
         </NavLink>
       </div>
       <div>
-        <NavLink to="/settings">
+        <NavLink to="/settings" viewTransition>
           <img src={iconSettings} alt="settings" />
         </NavLink>
       </div>
