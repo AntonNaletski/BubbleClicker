@@ -1,3 +1,5 @@
+import "@fontsource/boogaloo";
+import "@fontsource-variable/roboto-condensed/wght.css";
 import useLocalStorage from "./utils/useLocalStorage";
 import getPurchasableItems from "./utils/getPurchasableItems";
 import round from "./utils/round";

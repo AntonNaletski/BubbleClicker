@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Boogaloo&family=Roboto+Condensed:wght@400;700&display=swap");
-
 /* -- Värimäärittelyt ------------------------------------------------- */
 
 :root {
@@ -24,7 +22,8 @@
 body {
   background-color: var(--neutral); /* sovelluksen taustaväri */
   color: var(--neutral-darker); /* sovelluksen tekstiväri */
-  font-family: "Roboto Condensed", sans-serif; /* sovelluksen fontti */
+  font-family: "Roboto Condensed Variable", sans-serif; /* sovelluksen fontti */
+
   font-size: 1.25em; /* sovelluksen tekstin koko */
 }
 
