@@ -6,7 +6,7 @@ function Balance(props) {
 
   return (
     <div className="balance">
-      <div>lemons</div>
+      <div>bubbles</div>
       <div className="balance_total">{total}</div>
     </div>
   );

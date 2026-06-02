@@ -3,7 +3,7 @@ function Credits() {
     <div>
       <h1>Credits</h1>
       <p>Tekijä: Anton Naletski</p>
-      <p>Lemon Clicker projekti</p>
+      <p>bubble clicker projekti</p>
     </div>
   );
 }

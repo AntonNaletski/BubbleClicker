@@ -1,6 +1,6 @@
 import shortenNumber from "../utils/shortenNumber";
 
-import iconLemon from "../assets/lemon.svg";
+import iconLemon from "../assets/sbubble.svg";
 
 // Funktio, joka selvittää kuvan polun suoritusaikana.
 function getImageUrl(name) {

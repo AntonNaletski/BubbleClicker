@@ -1,5 +1,5 @@
 import shortenNumber from "../utils/shortenNumber";
-import iconLemon from "../assets/lemon.svg";
+import iconLemon from "../assets/sbubble.svg";
 
 function Header(props) {
   if (props.hasOwnProperty("balance")) {

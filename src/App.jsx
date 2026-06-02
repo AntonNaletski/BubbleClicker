@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import clickSound from "./assets/click.mp3";
 import "@fontsource/boogaloo";
 import "@fontsource-variable/roboto-condensed/wght.css";
 import useLocalStorage from "./utils/useLocalStorage";
@@ -7,7 +9,14 @@ import items from "./config/items.js";
 import AppRouter from "./components/AppRouter";
 import { useState } from "react";
 import "./App.css";
+
 function App() {
+  const audioRef = useRef(null);
+
+  if (!audioRef.current) {
+    audioRef.current = new Audio(clickSound);
+    audioRef.current.volume = 0.5;
+  }
   const handleReset = () => {
     // Palautetaan taltiot alkuarvoihin.
     resetStats();
@@ -49,6 +58,11 @@ function App() {
   );
 
   const handleClick = () => {
+    const audio = audioRef.current;
+
+    audio.pause();
+    audio.currentTime = 0;
+    audio.play();
     // Tehdään kopio stats-tilamuuttujasta.
     let newstats = { ...stats };
     // Kasvatetaan napautusten lukumäärää yhdellä.
@@ -111,13 +125,15 @@ function App() {
   };
 
   return (
-    <AppRouter
-      stats={stats}
-      storeitems={storeitems}
-      handleClick={handleClick}
-      handlePurchase={handlePurchase}
-      handleReset={handleReset}
-    />
+    <>
+      <AppRouter
+        stats={stats}
+        storeitems={storeitems}
+        handleClick={handleClick}
+        handlePurchase={handlePurchase}
+        handleReset={handleReset}
+      />
+    </>
   );
 }
 

@@ -6,7 +6,7 @@ function Booster(props) {
 
   return (
     <div className="booster">
-      <div>{value} lemons / click</div>
+      <div>{value} bubbles / click</div>
     </div>
   );
 }

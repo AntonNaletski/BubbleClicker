@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 
-import iconLemon from "../assets/lemon.svg";
+import iconLemon from "../assets/sbubble.svg";
 import iconPackage from "../assets/package.svg";
 import iconSettings from "../assets/settings.svg";
 

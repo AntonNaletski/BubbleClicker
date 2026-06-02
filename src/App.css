@@ -1,7 +1,7 @@
 /* -- Värimäärittelyt ------------------------------------------------- */
 
 :root {
-  --primary: #ffb600;
+  --primary: #1bbdee;
   --secondary: #e84855;
   --neutral-lightest: #ffffff;
   --neutral-light: #f3f3f3;
@@ -22,13 +22,14 @@
 body {
   background-color: var(--neutral); /* sovelluksen taustaväri */
   color: var(--neutral-darker); /* sovelluksen tekstiväri */
-  font-family: "Roboto Condensed Variable", sans-serif; /* sovelluksen fontti */
+  font-family:
+    Arial, Helvetica, sans-serif, Geneva, Tahoma, sans-serif; /* sovelluksen fontti */
 
   font-size: 1.25em; /* sovelluksen tekstin koko */
 }
 
 h1 {
-  font-family: "Boogaloo", cursive; /* otsikon fontti */
+  font-family: "Fredoka", sans-serif; /* otsikon fontti */
   font-weight: normal; /* otsikon paksuus */
 }
 
